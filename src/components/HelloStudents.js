@@ -6,9 +6,12 @@ function HelloStudents ()
   // Some test values.
   const students = [ "Lindsey", "Ayesha", "Krisztina" ];
 
+  // We could use a counter to make sure our keys will be unique.
+  let counter = 0;
+
   // Create a map (versus an array.)
   const studentsList = students.map(
-    studentName => <HelloStudent name={studentName} />
+    studentName => <HelloStudent key={counter++} name={studentName} />
   );
 
   console.log( studentsList );
